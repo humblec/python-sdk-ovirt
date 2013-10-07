@@ -42,7 +42,7 @@ if __name__ == "__main__":
 			print i.name
 			if i.status.state != 'up':
 				logging.warning('%s is not up, trying to start it' % i.name)
-				threadMe = Thread(target=shutdown_vms, args=[i])
+				threadMe = Thread(target=start_vms, args=[i])
 				threadMe.start()
 				threads.append(threadMe)
     	except Exception as e:
