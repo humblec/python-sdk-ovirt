@@ -33,6 +33,7 @@ import time
 import logging
 
 threads=[]
+failedVms=[]
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
                     filename='/tmp/shutdown_vms.log',
@@ -43,7 +44,7 @@ def shutdown_vms(vmObj):
 		vmObj.stop()
 		#time.sleep(5)
 	except Exception as e:
-		logging.debug('Exception caught on VM stop:\n%s' % str(e))
+		logging.debug('Exception caught on VM ( %s) stop:\n%s' % (vmObj.name, str(e)))
 
 if __name__ == "__main__":
    try:	
@@ -52,6 +53,7 @@ if __name__ == "__main__":
               password="somepassword",
               ca_file="/root/ca.crt")
     	try: 
+    		print ' \n I am logging in /tmp/shutdown_vms.log file \n'
 		vmsList = api.vms.list()
 	 	for i in vmsList:
 			print i.name
@@ -72,6 +74,8 @@ if __name__ == "__main__":
 			logging.info ('Thread : %s terminated' % (th.getName()))
 		else:
 			logging.debug( 'Thread : %s is still alive, you may check this task..' % (th))
+			
+	logging.debug (' Below Vms failed to stop with an exception:%s' % (failedVms));
     	api.disconnect()
 
    except Exception as ex:
