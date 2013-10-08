@@ -62,6 +62,8 @@ if __name__ == "__main__":
               username=APIUSER,
               password=APIPASS,
               ca_file=CAFILE)
+        print 'Connected to RHEVM API  %s Successfully' % APIURL
+        logging.info ( 'Successfully Connected to %s' % APIURL)
     	try: 
 		print ' \n I am logging in %s \n' % LOGFILENAME
 		vmsList = api.vms.list()
