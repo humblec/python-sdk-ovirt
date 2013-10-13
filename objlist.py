@@ -37,10 +37,10 @@ import logging
 
 #Configure
  
-APIURL="https://dhcp210-53.gsslab.pnq.redhat.com/api"
+APIURL="https://myrhevm.humblec.com/api"
 APIUSER="admin@internal"
-APIPASS="redhat"
-CAFILE="/root/ca.crt.2"
+APIPASS="somepassword"
+CAFILE="/root/ca.crt"
 LOGFILENAME="/tmp/list_setup.log"
 
 s1= '.'
