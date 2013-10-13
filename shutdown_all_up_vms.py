@@ -19,6 +19,8 @@
 
 # Please make sure you are changing below parameters in api :
 
+# This program can be used to shutdown all up vms in a ovirt DC
+
 #url ="Your ovirt engine api url"
 #username ="user to access the api"
 #password ="password of above user"
