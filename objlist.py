@@ -55,9 +55,8 @@ def getObjInfo (obje, objlist):
 	greet = s1 * 15
 	print '\n %s %s %s \n'  % (greet,obje, greet)
 	for obj in objlist:
-		print 'Name: %30s  Status:  %30s ' % ((obj.name).upper(), (obj.status.state).upper())
-		logging.info ('%13s-  Name: %30s  Status:  %30s ' % (obje, (obj.name).upper(), (obj.status.state).upper()))
-	
+		print ' %30s  :  %30s : %30s ' % ((obj.name).upper(), (obj.status.state).upper(),obj.get_id())
+		logging.info ('%13s-  : %30s :  %30s  : %30s' % (obje, (obj.name).upper(), (obj.status.state).upper(), obj.get_id()))
 if __name__ == "__main__":
    	try:	
         	api = API(url=APIURL,
