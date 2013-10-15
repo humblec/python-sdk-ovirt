@@ -19,8 +19,13 @@
 # This program can be used to list datacenters, hypervisors, vms in an ovirt Dc ,
 #with its status..
 
-# This program can be used to fetch detailed information about ovirt dc parameters.
-# Refer #
+
+#  This program can be used to list datacenters, hypervisors, vms in an ovirt Dc ,
+#with its status..
+
+#Refer http://humblec.com/ovirt-find-hosts-clusters-vm-running-status-ids-storage-domain-details-ovirt-dc-pythonovirt-sdk-part-3/
+
+
 
 # Please make sure you are changing  below parameters in api :
 
