@@ -34,7 +34,7 @@ import time
 
 
 try:
-    api = API(url="https://dhcp210-30.gsslab.pnq.redhat.com/api",
+    api = API(url="https://myrhevm.humblec.com/api",
               username="admin@internal",
               password="redhat",
               ca_file="/root/ca.crt")
