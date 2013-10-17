@@ -41,7 +41,7 @@ try:
     try:
          vmsList = api.vms.list()
          for instance in vmsList:
-                print instance.name
+                print '\t \t\t\tVM :%s' % (instance.name.upper())
                 address=[]
                 if instance.status.state == 'up' and instance.get_guest_info():
                         vmnics= instance.get_nics().list()
