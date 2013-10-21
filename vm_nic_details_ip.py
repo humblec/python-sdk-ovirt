@@ -52,7 +52,7 @@ try:
                                 address.append(ip.get_address())
                                 print '\t IP : %s' % ( ip.get_address())
     except Exception as e:
-        print 'Start VM Exception:\n%s' % str(e)
+        print " Exception:\n%s' % str(e)
 
 
     api.disconnect()
