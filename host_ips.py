@@ -56,6 +56,11 @@ try:
 			hostsnics= instance.nics.list()
 			for ni in hostsnics:
 				print ni.name
+				bonded = ni.get_bonding()
+				if bonded:
+					slvs = bonded.get_slaves()
+					slvs_nics_list = slvs.get_host_nic():
+						
 				ips = ni.get_ip()
 				address.append(ips.get_address())
 				print '\t IP : %s' % ( ips.get_address())
