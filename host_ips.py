@@ -32,10 +32,10 @@
 
 #Configure
  
-APIURL="https://dhcp210-53.gsslab.pnq.redhat.com/api"
+APIURL="https://myrhevm.humblec.com/api"
 APIUSER="admin@internal"
-APIPASS="redhat"
-CAFILE="/root/ca.crt.2"
+APIPASS="somepassword"
+CAFILE="/root/ca.crt"
 #LOGFILENAME="/tmp/host_ip.log"
 
 try:
@@ -58,13 +58,21 @@ try:
 				print ni.name
 				bonded = ni.get_bonding()
 				if bonded:
+					#TODO- all of the slaves nic object fields are None. 
+					print '\ \t\t %s \n' % (ni.name)
 					slvs = bonded.get_slaves()
-					slvs_nics_list = slvs.get_host_nic():
-						
+					slvs_nics_list = slvs.get_host_nic()
+					if slvs_nics_list:
+						for sl in slvs_nics_list:
+							print ('Details:BootProto:%s\t get_bridged:%s \t get_mac:%s \t get_check_connectivity:%s get_sttaus:%s' % ( sl.get_boot_protocol(), sl.get_bridged(), sl.get_mac(), sl.get_check_connectivity(), sl.get_status()))
+							print sl.get_name()
+						print ('Number of slaves:%s' % (len(slvs_nics_list)))
+				print ni.name
 				ips = ni.get_ip()
 				address.append(ips.get_address())
 				print '\t IP : %s' % ( ips.get_address())
-    	 	print address
+	
+		print address
     except Exception as e:
         print 'Exception:\n%s' % str(e)
 
