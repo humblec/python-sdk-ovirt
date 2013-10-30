@@ -68,9 +68,9 @@ if __name__ == "__main__":
 				if ob=="datacenters":
 					getObjInfo(ob, api.datacenters.list())
 				if ob=="hosts":
-					getObjInfo(ob, api.hosts.list())
+					getObjInfo(ob, api.hosts.list(max=200))
 				if ob=="vms":
-					getObjInfo(ob, api.vms.list())
+					getObjInfo(ob, api.vms.list(max=400))
 
 			
     		except Exception as e:
