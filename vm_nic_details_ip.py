@@ -39,7 +39,7 @@ try:
               password="redhat",
               ca_file="/root/ca.crt")
     try:
-         vmsList = api.vms.list()
+         vmsList = api.vms.list(max=500)
          for instance in vmsList:
                 print '\t \t\t\tVM :%s' % (instance.name.upper())
                 address=[]
