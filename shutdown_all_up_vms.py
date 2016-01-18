@@ -54,8 +54,8 @@ def start_vms(vmObj):
 	logging.info('Thread to stop %s', vmObj.name)
 	try:
 		#force off
-		vmObj.stop()
-		#graceful shutdown 
+		#vmObj.stop()
+		#graceful shutdown - http://website-humblec.rhcloud.com/ovirt-shutdownstop-start-virtual-machines-vms-ovirt-dc-automatically-using-python-sdk/#comment-253 
 		vmObj.shutdown()
 		#time.sleep(5)
 	except Exception as e:
