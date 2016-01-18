@@ -53,7 +53,10 @@ logging.basicConfig(level=logging.DEBUG,
 def start_vms(vmObj):
 	logging.info('Thread to stop %s', vmObj.name)
 	try:
+		#force off
 		vmObj.stop()
+		#graceful shutdown 
+		vmObj.shutdown()
 		#time.sleep(5)
 	except Exception as e:
 		logging.debug('Exception caught on VM ( %s) stop:\n%s' % (vmObj.name, str(e)))
